@@ -1,5 +1,5 @@
 const { pwd } = require('./pwd');
-const ls = require('./ls');
+const { ls } = require('./ls');
 
 console.log('this is ls => ', ls);
 
@@ -11,7 +11,7 @@ process.stdin.on('data', (data) => {
 	if (cmd === 'pwd') {
 		pwd();
 	} else if (cmd === 'ls') {
-		console.log(ls.ls)
+		ls();
 	} else {
 		process.stdout.write('You typed: ' + cmd);
 	}
