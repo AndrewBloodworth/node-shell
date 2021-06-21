@@ -11,6 +11,8 @@ const cat = function (filename, displayPrompt) {
 	});
 };
 
+console.log('Hello world');
+
 module.exports = {
 	cat,
 };
