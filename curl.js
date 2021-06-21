@@ -3,9 +3,9 @@ const request = require("request");
 function curl(url, done) {
   request(url, function (err, res, body) {
     if (err) {
-      done("no such file or website");
+      done("no such file or website\n");
     } else {
-      done(body);
+      done(body + "\n");
     }
   });
 }

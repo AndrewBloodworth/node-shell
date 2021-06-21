@@ -3,23 +3,25 @@ const { ls } = require("./ls");
 const { cat } = require("./cat");
 const { curl } = require("./curl");
 const { date } = require("./date");
-
-// const done = () => {
-// 	process.stdout.write('\nprompt > ');
-// };
+const { echo } = require("./echo");
 
 const done = (output = "") => {
   process.stdout.write(output);
-  process.stdout.write("\nprompt > ");
+  process.stdout.write("prompt > ");
 };
 
 done();
 process.stdin.on("data", (data) => {
-  const flags = data.toString().trim().split(" ");
+  const inputStringArray = data.toString().trim().split(" ");
 
-  const cmd = flags.shift();
-  const prompt = flags.pop();
-
+  const cmd = inputStringArray.shift();
+  const flags = [];
+  if (inputStringArray.length) {
+    while (inputStringArray[0][0] === "-") {
+      flags.push(inputStringArray.shift());
+    }
+  }
+  const prompt = inputStringArray.join(" ");
   if (cmd === "pwd") {
     pwd(done);
   } else if (cmd === "ls") {
@@ -30,6 +32,8 @@ process.stdin.on("data", (data) => {
     curl(prompt, done);
   } else if (cmd === "date") {
     date(prompt, flags, done);
+  } else if (cmd === "echo") {
+    echo(prompt, flags, done);
   } else {
     process.stdout.write("You typed: " + cmd);
     done();

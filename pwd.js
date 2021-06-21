@@ -1,5 +1,5 @@
 function pwd(done) {
-	done(__dirname);
+  done(__dirname + "\n");
 }
 
 module.exports.pwd = pwd;
