@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-function ls() {
+function ls(displayPrompt) {
   fs.readdir("./", "utf8", (err, files) => {
     if (err) {
       throw err;
@@ -8,6 +8,7 @@ function ls() {
       process.stdout.write(files.join("\n"));
     }
     console.log("ls ran");
+    displayPrompt();
   });
 }
 
