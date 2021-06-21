@@ -6,8 +6,8 @@ const cat = function (filename, displayPrompt) {
 			console.log('no such file or directory');
 		} else {
 			console.log(data);
-			displayPrompt();
 		}
+		displayPrompt();
 	});
 };
 
