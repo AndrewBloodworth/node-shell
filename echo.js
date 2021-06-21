@@ -15,10 +15,10 @@ function echo(prompt, flags, done) {
 
 function getFlagFunctions(flags) {
   //Return a new array of flag objects
-  return flags.map((flag) => getFlag(flag));
+  return flags.map((flag) => getFlagObject(flag));
 }
 
-function getFlag(flag) {
+function getFlagObject(flag) {
   //Find and return the appropriate flag object
   switch (flag) {
     case "-n":

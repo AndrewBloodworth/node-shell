@@ -1,4 +1,4 @@
-function pwd(done) {
+function pwd(prompt, flags, done) {
   done(__dirname + "\n");
 }
 

@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const cat = function (filename, done) {
+const cat = function (filename, flags, done) {
   fs.readFile(filename, "utf8", function (err, data) {
     if (err) {
       done("no such file or directory \n");

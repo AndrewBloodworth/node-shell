@@ -1,6 +1,6 @@
 const request = require("request");
 
-function curl(url, done) {
+function curl(url, flags, done) {
   request(url, function (err, res, body) {
     if (err) {
       done("no such file or website\n");
