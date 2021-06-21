@@ -1,7 +1,6 @@
 const { pwd } = require('./pwd');
 const { ls } = require('./ls');
 
-console.log('this is ls => ', ls);
 
 process.stdout.write('prompt > ');
 

@@ -6,8 +6,7 @@ function ls() {
 		if (err) {
 			throw err;
 		} else {
-			process.stdin.write(files.join('\n'));
-			console.log(files)
+			process.stdout.write(files.join('\n'));
 		}
 	});
 
