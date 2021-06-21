@@ -1,14 +1,13 @@
-const fs = require("fs");
+const fs = require('fs');
 
-function ls(displayPrompt) {
-  fs.readdir("./", "utf8", (err, files) => {
-    if (err) {
-      throw err;
-    } else {
-      process.stdout.write(files.join("\n"));
-    }
-    displayPrompt();
-  });
+function ls(done) {
+	fs.readdir('./', 'utf8', (err, files) => {
+		if (err) {
+			done(err);
+		} else {
+			done(files.join('\n'));
+		}
+	});
 }
 
 module.exports.ls = ls;

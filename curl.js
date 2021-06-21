@@ -1,21 +1,15 @@
 const request = require('request');
 
-function curl(url, displayPrompt) {
-
-request(url, function(err, res, body) {
-  if (err) {
-    console.log("no such file or website");
-  } else {
-    console.log(body)
-  }
-
-  displayPrompt();
-})
-
+function curl(url, done) {
+	request(url, function (err, res, body) {
+		if (err) {
+			done('no such file or website');
+		} else {
+			done(body);
+		}
+	});
 }
 
-
-
 module.exports = {
-  curl
+	curl,
 };

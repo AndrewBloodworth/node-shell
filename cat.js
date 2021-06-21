@@ -1,17 +1,14 @@
 const fs = require('fs');
 
-const cat = function (filename, displayPrompt) {
+const cat = function (filename, done) {
 	fs.readFile(filename, 'utf8', function (err, data) {
 		if (err) {
-			console.log('no such file or directory');
+			done('no such file or directory');
 		} else {
-			console.log(data);
+			done(data);
 		}
-		displayPrompt();
 	});
 };
-
-console.log('Hello world');
 
 module.exports = {
 	cat,
