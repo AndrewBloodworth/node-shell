@@ -7,7 +7,6 @@ function ls(displayPrompt) {
     } else {
       process.stdout.write(files.join("\n"));
     }
-    console.log("ls ran");
     displayPrompt();
   });
 }

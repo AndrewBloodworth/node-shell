@@ -9,7 +9,6 @@ const displayPrompt = () => {
 displayPrompt();
 process.stdin.on("data", (data) => {
   const cmd = data.toString().trim();
-
   if (cmd === "pwd") {
     pwd(displayPrompt);
   } else if (cmd === "ls") {
