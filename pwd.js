@@ -1,5 +1,6 @@
-function pwd() {
-	console.log(__dirname);
+function pwd(displayPrompt) {
+  console.log(__dirname);
+  displayPrompt();
 }
 
 module.exports.pwd = pwd;
