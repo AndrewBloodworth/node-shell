@@ -11,7 +11,7 @@ process.stdin.on('data', (data) => {
 	if (cmd === 'pwd') {
 		pwd();
 	} else if (cmd === 'ls') {
-		ls();
+		console.log(ls.ls)
 	} else {
 		process.stdout.write('You typed: ' + cmd);
 	}
